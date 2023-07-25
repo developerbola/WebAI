@@ -1,6 +1,7 @@
 import { Typography, Button, Box } from "@mui/material";
 import bannerRobo from "../../assets/roboBanner.png";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import "./banner.css"
 const index = () => {
   return (
     <>
@@ -19,6 +20,9 @@ const index = () => {
             flexDirection: "column",
           }}
         >
+          <Typography variant="h4" py={"20px"}>
+            <span className="underGrow powered">Powered by SDB</span>
+          </Typography>
           <Typography variant="h2">
             Build Your <span className="underGrow">Business</span> <br />
             With <span className="underGrow">Us</span>
@@ -34,9 +38,9 @@ const index = () => {
                 bgcolor: "#00D1FF",
                 borderRadius: "20px",
                 width: "30%",
-                py: "9px",
-                mt: "30px",
-                boxShadow: "1px 1px 30px 3px #00b3ff",
+                py: "10px",
+                mt: "40px",
+                boxShadow: "0px 5px 30px 2px #00b3ff",
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",

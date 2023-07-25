@@ -1,16 +1,12 @@
 import { Routes, Route } from "react-router-dom";
-import {
-  Home,
-  About,
-  Services,
-  Solution
-} from "./pages/pages";
+import { Home, About, Services, Solution } from "./pages/pages";
 import { ThemeProvider, createTheme } from "@mui/material";
 import Navbar from "./components/Navbar";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useState } from "react";
 import "./styles/App.css";
+import Cursor  from "./components/Cursor";
 
 function App() {
   const [darkMode, setDarkMode] = useState(true);
@@ -34,6 +30,7 @@ function App() {
 
         <ToastContainer position="top-right" autoClose={1000} />
       </ThemeProvider>
+      <Cursor />
     </>
   );
 }

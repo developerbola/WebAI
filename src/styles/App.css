@@ -1,4 +1,3 @@
-
 .body {
   background: #000827;
 }
@@ -6,5 +5,5 @@
 main {
   margin-top: 100px;
   min-height: calc(100vh - 50px - 50px);
-  max-width: 100%;
+  overflow-x: hidden;
 }

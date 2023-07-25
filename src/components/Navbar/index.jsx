@@ -1,6 +1,5 @@
 import * as React from "react";
 import PropTypes from "prop-types";
-import logo from "../../../public/logo.png";
 import {
   AppBar,
   Box,
@@ -33,8 +32,16 @@ function DrawerAppBar(props) {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <Typography variant="h6" sx={{ my: 2 }}>
-        <img src={logo} height={"30px"} />
+      <Typography
+        variant="h4"
+        sx={{
+          display: { xs: "none", sm: "grid" },
+          placeItems: "center",
+          fontFamily: "Ubuntu, sans-serif",
+          fontWeight: "400",
+        }}
+      >
+        WebAI
       </Typography>
       <Divider />
       <List>
@@ -57,7 +64,7 @@ function DrawerAppBar(props) {
       <CssBaseline />
       <AppBar
         component="nav"
-        sx={{ p: "10px", bgcolor: "transparent", backdropFilter: "blur(8px)" }}
+        sx={{ p: "10px", bgcolor: "transparent", backdropFilter: "blur(10px)" }}
       >
         <Toolbar
           sx={{

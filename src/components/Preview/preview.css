@@ -1,0 +1,11 @@
+.hoverBtn::before {
+  content: "";
+  position: absolute;
+  height: 105%;
+  width: 105%;
+  z-index: -1;
+  border-radius: 20px;
+  filter: blur(10px);
+  background: linear-gradient(31deg, #00b3ff, #00ff9d);
+  transition: 0.2s;
+}

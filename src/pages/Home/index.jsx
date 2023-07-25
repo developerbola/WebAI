@@ -1,11 +1,13 @@
 import React from "react";
-import Banner from "../../components/Banner";
+import { Banner, Cards, Preview } from "../../components/components";
 import { Box } from "@mui/material";
 const index = () => {
   return (
     <>
       <Box>
         <Banner />
+        <Cards />
+        <Preview />
       </Box>
     </>
   );
