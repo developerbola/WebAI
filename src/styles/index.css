@@ -3,12 +3,19 @@
   margin: 0;
   box-sizing: border-box;
   cursor: default;
+  text-decoration: none;
 }
 
 body {
-  overflow-x: hidden;
+  background: url(../assets/bg.jpg);
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 ::selection {
   background: #00d9ff2f;
+}
+
+::-webkit-scrollbar {
+  width: 0;
 }

@@ -1,5 +1,7 @@
 import * as React from "react";
-import PropTypes from "prop-types";
+import { NavLink, Link } from "react-router-dom";
+import logo from "../../../public/favicon.png";
+import "./nav.css";
 import {
   AppBar,
   Box,
@@ -16,14 +18,11 @@ import {
   Button,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import "./nav.css";
-import { Link } from "react-router-dom";
 
 const drawerWidth = 240;
-const navItems = ["Home", "Services", "Solution", "About"];
+const navItems = ["home", "services", "blogs", "about"];
 
-function DrawerAppBar(props) {
-  const { window } = props;
+function DrawerAppBar() {
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
@@ -35,29 +34,39 @@ function DrawerAppBar(props) {
       <Typography
         variant="h4"
         sx={{
-          display: { xs: "none", sm: "grid" },
+          display: "grid",
           placeItems: "center",
           fontFamily: "Ubuntu, sans-serif",
           fontWeight: "400",
+          py: "20px",
         }}
       >
         WebAI
       </Typography>
       <Divider />
       <List>
-        {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: "center" }}>
-              <ListItemText primary={item} />
-            </ListItemButton>
-          </ListItem>
+        {navItems.map((item,idx) => (
+          <NavLink
+            to={item == "home" ? "/" : item}
+            style={{ textDecoration: "none" }}
+            key={idx}
+          >
+            <ListItem key={item} disablePadding sx={{ borderRadius: "10px" }}>
+              <ListItemButton
+                sx={{
+                  textAlign: "center",
+                  color: "#fff",
+                  textTransform: "uppercase",
+                }}
+              >
+                <ListItemText primary={item} />
+              </ListItemButton>
+            </ListItem>
+          </NavLink>
         ))}
       </List>
     </Box>
   );
-
-  const container =
-    window !== undefined ? () => window().document.body : undefined;
 
   return (
     <Box sx={{ display: "flex", bgcolor: "transparent", zIndex: "1" }}>
@@ -84,17 +93,22 @@ function DrawerAppBar(props) {
           >
             <MenuIcon sx={{ fontSize: "35px" }} />
           </IconButton>
-          <Typography
-            variant="h4"
-            sx={{
-              display: { xs: "none", sm: "grid" },
-              placeItems: "center",
-              fontFamily: "Ubuntu, sans-serif",
-              fontWeight: "400",
-            }}
-          >
-            WebAI
-          </Typography>
+          <Box sx={{ display: { sm: "none" }, ml: "55%" }}>
+            <img src={logo} alt="logo" height="50px" />
+          </Box>
+          <Link to={"/"} style={{ color: "white" }}>
+            <Typography
+              variant="h4"
+              sx={{
+                display: { xs: "none", sm: "grid" },
+                placeItems: "center",
+                fontFamily: "Ubuntu, sans-serif",
+                fontWeight: "400",
+              }}
+            >
+              WebAI
+            </Typography>
+          </Link>
           <Box
             sx={{
               display: { xs: "none", sm: "flex" },
@@ -102,26 +116,25 @@ function DrawerAppBar(props) {
               mr: "20px",
             }}
           >
-            {navItems.map((item) => (
-              <Link to={item == "Home" ? "/" : item}>
+            {navItems.map((item,idx) => (
+              <NavLink key={idx} to={item == "Home" ? "/" : item}>
                 <Button
-                  key={item}
                   sx={{
                     color: "#fff",
                     fontFamily: "Inria Sans, sans-serif",
                     fontSize: "20px",
+                    px: "10px",
                   }}
                 >
                   {item}
                 </Button>
-              </Link>
+              </NavLink>
             ))}
           </Box>
         </Toolbar>
       </AppBar>
       <Box component="nav">
         <Drawer
-          container={container}
           variant="temporary"
           open={mobileOpen}
           onClose={handleDrawerToggle}
@@ -129,10 +142,13 @@ function DrawerAppBar(props) {
             keepMounted: true,
           }}
           sx={{
+            backdropFilter: "blur(10px)",
             display: { xs: "block", sm: "none" },
             "& .MuiDrawer-paper": {
               boxSizing: "border-box",
               width: drawerWidth,
+              bgcolor: "#ffffff10",
+              backdropFilter: "filter(10px)",
             },
           }}
         >
@@ -142,9 +158,5 @@ function DrawerAppBar(props) {
     </Box>
   );
 }
-
-DrawerAppBar.propTypes = {
-  window: PropTypes.func,
-};
 
 export default DrawerAppBar;

@@ -1,8 +1,21 @@
-
-const index = () => {
+import { Box, Container } from "@mui/material";
+import {
+  Banner,
+  Benefits,
+  Preview,
+} from "../../components/AboutComponents/components";
+const Index = () => {
   return (
-    <div>About</div>
-  )
-}
+    <Box>
+      <Banner />
+      <Box sx={{ px: "20px", display: "grid", placeItems: "center" }}>
+        <Benefits />
+      </Box>
+      <Preview />
+    </Box>
+  );
+};
 
-export default index
+//
+
+export default Index;

@@ -1,0 +1,35 @@
+.boltIcon::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  height: 100%;
+  width: 100%;
+  filter: blur(15px);
+  background: linear-gradient(31deg, #544a7d, #ffd452);
+}
+
+.searchIcon::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  height: 100%;
+  width: 100%;
+  filter: blur(15px);
+  background: linear-gradient(31deg, #8360c3, #2ebf91);
+}
+.wifiIcon::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  height: 100%;
+  width: 100%;
+  filter: blur(15px);
+  background: linear-gradient(31deg, #000046, #1cb5e0);
+}
+

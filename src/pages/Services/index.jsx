@@ -1,8 +1,12 @@
-
-const index = () => {
+import { Box } from "@mui/material"
+import { Banner, Cards } from "../../components/ServicesComponents/components"
+const Index = () => {
   return (
-    <div>Services</div>
-  )
+    <Box>
+      <Banner />
+      <Cards />
+    </Box>
+    )
 }
 
-export default index
+export default Index

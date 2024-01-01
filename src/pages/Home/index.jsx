@@ -1,16 +1,26 @@
 import React from "react";
-import { Banner, Cards, Preview } from "../../components/components";
+import {
+  Banner,
+  Cards,
+  Preview,
+  Skills,
+  LastBlogs
+} from "../../components/HomeComponents/components";
 import { Box } from "@mui/material";
-const index = () => {
+import Aos from "aos";
+Aos.init();
+const Index = () => {
   return (
     <>
       <Box>
         <Banner />
         <Cards />
         <Preview />
+        <LastBlogs />
+        <Skills />
       </Box>
     </>
   );
 };
 
-export default index;
+export default Index;
